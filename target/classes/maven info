@@ -1,0 +1,2 @@
+spring-boot:run - запуск приложения спринг в maven
+clean package   - сборка приложения в пакет
