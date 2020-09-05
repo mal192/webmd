@@ -1,0 +1,43 @@
+git init - перенос текущего репозитория
+git status - проверка репозитория
+git add . - добовляем в гит все файлы
+ssh-keygen.exe - генерируем ключи для ssh
+
+прописываем глобального юзера (у меня на нем сидит github)
+git config --global user.email "mal_192@mail.ru"
+
+задаем комит
+git commit -m 'Initial commit'
+
+взято с git_hub при создании нового репозитория на сайте
+git remote add <origin> <URL>
+git push -u <origin> master
+
+просмотр логов авторизации
+git log --oneline --graph --decorate --all
+
+создать копию проекта
+git clone <URL> <name>
+
+создание новой ветки
+git branch <имя ветки>
+
+переключение на ветку
+git checkout <имя ветки>
+
+переименование ветки (в ветке которую нужно переименовать)
+git branch -m <имя ветки>
+
+удаление ветки
+git branch -d <имя ветки>
+
+вливание данных в ветку
+git merge <имя ветки>
+
+Создание навой версии
+git branch -m <V_1.0>
+git checkout <V_1.0>
+git add .
+git commit -m 'working version'
+git remote set-url ORG https://github.com/mal192/ya_algoritm_F.git
+git push -u ORG V_1.0

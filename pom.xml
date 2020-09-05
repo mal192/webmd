@@ -11,7 +11,7 @@
 
     <groupId>com.example</groupId>
     <artifactId>webmd</artifactId> <!--имя файла -->
-    <version>1.0.0</version>
+    <version>2.0.0</version>
     <name>WEBMD</name>
     <description>testing_function_Spring</description>
 
@@ -20,8 +20,33 @@
     </properties>
 
     <dependencies>
-       <!--кот рекомендовал удалит и добавить mustache. Попробуем сочитать их оба -->
+
+        <dependency> <!--Без файла application.properties не пускается
+        без поднятой базы весь функционал вываливается в 500 ошибку-->
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
         <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!--(От кота V2) Для работу с Базами ДАННЫХ -->
+        <dependency> <!--mysql -->
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency> <!--postgre -->
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <!--____________________-->
+
+       <!--кот рекомендовал удалит и добавить mustache. Попробуем сочитать их оба -->
+       <dependency>  <!--  с таймлиф не пускается  или thymeleaf или starter-data-jpa работает с -->
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
@@ -30,11 +55,8 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mustache</artifactId>
         </dependency>
+        <!--____________________-->
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

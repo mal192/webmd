@@ -1,0 +1,23 @@
+Прикручиваем базу к проекту
+1. добавляем нужные теги в pom.xml (где объявленные нужные библиотеки с базами)
+2. создаем файл с конфигами application.properties
+3. надо ставить базу
+3.1 $ sudo apt install sql-server sql-client
+3.2 $ sudo mysql --password
+3.3 mysql> create database <имя базы>;
+где db_example имя базы
+3.4    create user '<user>'@'%' identified by '<pass>';
+mysql> create user 'suser'@'%' identified by '123';
+3.5 mysql> grant all on <имя базы> .* to 'suser'@'%';
+3.6 проверить состояние сервиса
+  sudo systemctl status mysql
+ 4. Создание MSG.java //класс собщений
+ 5. Создаем package rep для репозиториев
+ 6. в нем создаем интерфейс MessageRep.java
+
+ Руководство по mustache:
+ http://mustache.github.io/mustache.5.html
+
+ Руководство по JPA репозиториям:
+ https://docs.spring.io/spring-data/jpa/docs/1.5.0.RELEASE/reference/html/jpa.repositories.html#jpa.query-methods.query-creation
+

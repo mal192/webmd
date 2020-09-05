@@ -1,0 +1,11 @@
+   //кот рекомендует создать файл в pom.xml с ним не пускается приложение
+    <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+// конфиг на постгресс в файле application.properties
+spring.datasource.url=jdbc:postgresql://localhost/baza
+spring.datasource.username=postgres
+spring.datasource.password=123
+spring.jpa.generate-dll=true  ///структуру базы обслуживает spring

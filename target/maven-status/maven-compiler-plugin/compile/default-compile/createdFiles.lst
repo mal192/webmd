@@ -1,2 +1,4 @@
 com/example/webmd/ServingWebContentApplication.class
+com/example/webmd/rep/MessageRep.class
+com/example/webmd/MSG.class
 com/example/webmd/GreetingController.class
