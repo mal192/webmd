@@ -1,0 +1,27 @@
+Прикручиваем авторизацию
+в spring.io находим Securing a Web Application
+1. Создаем страничку home
+2. в GreetingController пропиываем ссылку на home
+3. Создаем package <config>
+4. в конфиг добовляем класс MvcConfig
+5. в pom.xml добавляем зависимост spring security
+6. создаем новый класс web security config (WebSecurityConfig.java)
+7. создаем страничку логининга login.mustache)
+8. в стартовую home.mustache (добавляем кнопку logout)
+9. Добовляем в файл application.properties атрибуты для mustache
+spring.mustache.expose-request-attributes=true
+10. в login.mustache добавляем скрытое поле
+ <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+11. Эту же строку добавляем для всех запросов
+
+Добавим базу пользователей
+12. Создаем два класса User.java и Role.java
+13. класс User.java хранит структуры таблицы данных пользователей
+14. класс Role.java является простым перечислением ролей(Group)
+15. топаем в класс WebSecurityConfig.java и удаляем "менеджер" пользователей (//)
+16. Добовляем страницу регестрации пользователей (login копируем в reg)
+17. на страничке login добавляем ссылку на reg
+18. Для удобства создали package controller где будем хранить контроллеры обработки URL-ов
+19. GreetingController переименуем в mailController
+20. Созданим новый контроллер regController
+21. Добавим интерфейс UserRep

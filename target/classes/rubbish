@@ -9,3 +9,24 @@ spring.datasource.url=jdbc:postgresql://localhost/baza
 spring.datasource.username=postgres
 spring.datasource.password=123
 spring.jpa.generate-dll=true  ///структуру базы обслуживает spring
+
+<img src="{{jpg}}" id="image_1" width="800" height="600" style="position: absolute" />
+
+<form action="/reg" method="get">
+        <input type="submit" value="registr">
+</form>
+
+
+    @PostMapping("/reg")
+    public  String addUser(User user, Map<String, Object> model){
+    User userFromDb = userRep.findByUsername(user.getUsername());
+        if (userFromDb!=null){
+        model.put("message", "User Exists1");
+        return  "reg";
+    }
+    user.setActive(true);
+    user.setGroup(Collections.singleton(Role.USER)); //Лучше групп
+    userRep.save(user);
+    return "redirect:/login";
+
+    }

@@ -7,6 +7,7 @@
     <form method = post action="/mail">
         <input type="text" name="text" placeholder="Введи сообщение">
         <input type="text" name = "tag" placeholder="тег">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
         <button type="submit">Добавить</button>
     </form>
 
@@ -15,6 +16,7 @@
 
     <form method = post action="/filtr">
         <input type="text" name="filtr_tag">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
         <button type="submit">Найти</button>
     </form>
 

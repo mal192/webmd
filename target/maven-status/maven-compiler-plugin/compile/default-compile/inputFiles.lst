@@ -1,4 +1,10 @@
-/home/mzg/idea/spr/src/main/java/com/example/webmd/GreetingController.java
 /home/mzg/idea/spr/src/main/java/com/example/webmd/MSG.java
+/home/mzg/idea/spr/src/main/java/com/example/webmd/controller/mailController.java
+/home/mzg/idea/spr/src/main/java/com/example/webmd/controller/regController.java
+/home/mzg/idea/spr/src/main/java/com/example/webmd/config/WebSecurityConfig.java
+/home/mzg/idea/spr/src/main/java/com/example/webmd/rep/UserRep.java
+/home/mzg/idea/spr/src/main/java/com/example/webmd/User.java
+/home/mzg/idea/spr/src/main/java/com/example/webmd/config/MvcConfig.java
+/home/mzg/idea/spr/src/main/java/com/example/webmd/Role.java
 /home/mzg/idea/spr/src/main/java/com/example/webmd/ServingWebContentApplication.java
 /home/mzg/idea/spr/src/main/java/com/example/webmd/rep/MessageRep.java

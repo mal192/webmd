@@ -6,6 +6,7 @@
 <div> {{some}} </div>
 </body>
 <form method="get" action="/mail">
+    <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
     <button type="submit">Twit</button>
 </form>
 </html>
