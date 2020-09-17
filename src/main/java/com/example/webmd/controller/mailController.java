@@ -2,8 +2,12 @@ package com.example.webmd.controller;
 //package com.example.webmd.rep;
 
 import com.example.webmd.MSG;
+
+import com.example.webmd.User;
 import com.example.webmd.rep.MessageRep;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -55,10 +59,14 @@ public class mailController {
     }
 
     @PostMapping ("/mail") //добавление
-    public String add(@RequestParam String text, @RequestParam String tag, Map<String,Object> model)
+    public String add(
+            @AuthenticationPrincipal User user, // <- правка V4
+            @RequestParam String text,
+            @RequestParam String tag,
+            Map<String,Object> model)
     {
         if ((text!="") || (tag!="")) {
-            MSG message = new MSG(text, tag);
+            MSG message = new MSG(text, tag, user); // <- V4
             msRep.save(message);
         }
         mail(model);

@@ -1,0 +1,28 @@
+Делаем связь сообщений с автоизованными пользоватеоями.
+1. В MSG добовляем новую переменую author типа User.
+2. К этой переменной делаем set и get (ALt+INsrt)
+3. модифицируем класс User делаем implements UserDetailis
+4. Там же в User нуно имплментировать недостоющие методы
+- UserDetailis является фексированным знаением Spring
+- имплементаций методов выполняетяс нажатием на UserDetailis ALT->Enter
+5. Полученные implements переводим в true // как сказал кот (по комениам класа User)
+6. в интерфесе Role делаем implement GrantedAuthority
+-имплементруеме так же как и UserDetailis
+- GrantedAuthority является фексированным знаением Spring
+7. переходим в WebSecurityConfig и комитим наш SQL запрос. Вместо него будет класс.
+8.  Create new package for name "service"  (Содаем навый пакедж с именем service)
+9. create new class for name "UserService" (создаем в этом пекедже навый класс и именем UserService)
+9.1 Объявить UserService как @Service
+10. новый класс делаем implements UserDetailsService
+- UserDetailsService является springom
+11. имплементируем его как предыдущие методы
+12. Запихиваем UserService в WebSecuriytConfig
+13. добовляем поле User в конструктор MSG
+14. добавляем пользователя в конструктор
+15. Для поля Autor настраиваем мепинг
+-переходим в MSG
+16. Добоаляем в mail.mustace поле:  <strong>{{autor}}</strong>
+17. В MSG прописываем исключение для сообщений без пользователей
+18. в шаблоне mail меняем Autor на autorName
+
+

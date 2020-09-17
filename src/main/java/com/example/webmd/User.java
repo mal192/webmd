@@ -1,11 +1,15 @@
 package com.example.webmd;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.Set;
 
 @Entity
 @Table (name = "usr") //имя таблицы
-public class User {
+public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -37,9 +41,36 @@ public class User {
     public String getUsername() {
         return username;
     }
+///V4 -> автоматом добавленная implents
+    @Override
+    public boolean isAccountNonExpired() {  //делаем true
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() { //делаем true
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() { //делаем true
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() { //делаем isActive()
+        return isActive();
+    }
+
     public void setUsername(String username) {
         this.username = username;
     }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() { ///делаем getRoles
+        return getRoles();
+    }
+    //<---V4
 
     public String getPassword() {
         return password;
@@ -62,4 +93,7 @@ public class User {
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
+    ///V4 ->
+
+
 }

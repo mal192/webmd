@@ -1,10 +1,11 @@
-com/example/webmd/User.class
 com/example/webmd/ServingWebContentApplication.class
 com/example/webmd/Role.class
 com/example/webmd/config/MvcConfig.class
 com/example/webmd/config/WebSecurityConfig.class
-com/example/webmd/controller/mailController.class
 com/example/webmd/rep/UserRep.class
+com/example/webmd/service/UserService.class
+com/example/webmd/User.class
+com/example/webmd/controller/mailController.class
 com/example/webmd/rep/MessageRep.class
 com/example/webmd/MSG.class
 com/example/webmd/controller/regController.class
